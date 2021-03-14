@@ -1,0 +1,13 @@
+@import "variables/font";
+
+@mixin titleFont($size: 36px, $weight: 700) {
+  font-family: $titleFont;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin regularFont($size: 18px, $weight: 400) {
+  font-family: $regularFont;
+  font-size: $size;
+  font-weight: $weight;
+}

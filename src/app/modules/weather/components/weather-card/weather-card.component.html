@@ -1,0 +1,24 @@
+<div class="card">
+  <p class="card__title">{{ weatherInfo.name | uppercase }}</p>
+  <img
+    [src]="weatherInfo.url" 
+    [alt]="weatherInfo.weather"
+    class="card__image"
+  />
+  <p class="card__averageTemp">{{ weatherInfo.main.temp  | convertTemperature |number :'1.0-0' }}</p>
+  <p class="card__weatherInfo">{{ weatherInfo.weather[0]?.main | uppercase }}</p>
+  <div class="card__minMaxTemp">
+    <div class="minTemp">
+      <img src="assets/image/down-arrow.png" alt="min"/>
+      <p class="minMaxTitle">{{ weatherInfo.main.temp_min | convertTemperature |number :'1.0-0' }}</p>
+      <p class="minTitle" >Min</p>
+    </div>
+    <div class="maxTemp">
+      <img src="assets/image/up-arrow.png" alt="max" />
+      <p class="minMaxTitle">{{weatherInfo.main.temp_max  | convertTemperature | number :'1.0-0' }}</p>
+      <p class="maxTitle">Max</p>
+    </div>
+  </div>
+  <ng-content select=".addCityButton"></ng-content>
+  <ng-content select=".isCityExist"></ng-content>
+</div>

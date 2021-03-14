@@ -1,0 +1,26 @@
+@import "variables/border";
+
+@mixin card(
+  $background: white,
+  $verticalPadding: 24px,
+  $horizontalPadding: 64px,
+  $borderRadius: $cardBorderRadius
+) {
+  background: $background;
+  border-radius: $borderRadius;
+  padding: $verticalPadding $horizontalPadding;
+}
+
+@mixin temperature($size: 5px, $marginLeft: 4px , $color:black) {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: $size;
+    height: $size;
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: $color;
+    margin-left: $marginLeft;
+  }
+}

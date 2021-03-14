@@ -1,0 +1,45 @@
+<div class="addCard">
+  <div class="container">
+    <div class="addCard__form">
+      <h1>ADD CITY</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <input formControlName="city" placeholder="City ..." />
+        <button
+          mat-fab
+          aria-label="Example icon button with a delete icon"
+          [disabled]="isLoading"
+        >
+          <mat-icon aria-hidden="false" aria-label="search icon"
+            >search</mat-icon
+          >
+        </button>
+      </form>
+    </div>
+
+    <div class="addCity">
+      <div>
+        <mat-spinner class="loading" *ngIf="isLoading"></mat-spinner>
+      </div>
+      <weather-card
+        [weatherInfo]="weatherInfo"
+        *ngIf="weatherInfo && !isLoading"
+      >
+        <button
+          mat-raised-button
+          *ngIf="!cityIsAdded"
+          class="addCityButton"
+          (click)="addCity(weatherInfo)"
+        >
+          ADD CITY +
+        </button>
+
+        <p class="isCityExist" *ngIf="cityIsAdded">
+          city exist
+        </p>
+      </weather-card>
+    </div>
+    <div class="addCity">
+      <a [routerLink]="['/weather']">see weather list</a>
+    </div>
+  </div>
+</div>

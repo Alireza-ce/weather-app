@@ -1,0 +1,133 @@
+@import "mixin/main";
+@import "mixin/font";
+@import "mixin/card";
+
+.cardDetail {
+  background: linear-gradient(#dbc4fc, #89dafe);
+}
+
+.backButton {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 32px;
+  img {
+    width: 50px;
+    cursor: pointer;
+  }
+  p {
+    letter-spacing: 2px;
+    color: white;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 65.5% 55%,
+    rgb(255, 217, 159),
+    rgb(255, 174, 172) 50%,
+    rgb(139, 217, 254) 50%,
+    rgb(219, 196, 252)
+  );
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+.container {
+  @include container;
+  position: relative;
+  z-index: 2;
+  margin-top: 64px;
+}
+
+.weatherInfo {
+  border-radius: 16px;
+}
+
+.mainDetail {
+  background: linear-gradient(#736dad, #fbb8ba);
+  display: flex;
+  justify-content: space-around;
+  padding: 64px 32px 64px 32px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.cityName {
+  hr {
+    color: white;
+  }
+  p {
+    @include titleFont(24px, 700);
+    color: white;
+  }
+}
+
+.temp {
+  text-align: center;
+}
+
+.averageTemp {
+  @include titleFont(54px, 700);
+  color: white;
+  @include temperature(5px, 4px, white);
+}
+
+.weather {
+  @include titleFont(16px, 500);
+  color: white;
+  margin-top: 16px;
+}
+
+.wind {
+  display: flex;
+  text-align: center;
+  margin-top: 8px;
+  @include titleFont(12px, 400);
+  color: white;
+  p {
+    margin: 0;
+  }
+}
+
+.windSpeed {
+  border-left: 2px solid;
+  padding-left: 8px;
+  margin-left: 8px;
+}
+
+.moreDetail {
+  background: white;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  display: flex;
+  justify-content: space-around;
+  padding: 32px 0;
+}
+
+.twitter {
+  color: darkblue;
+}
+
+.weatherList {
+  display: flex;
+}
+.weatherCard {
+  text-align: center;
+  margin-left: 16px;
+  @include regularFont;
+  color: darkblue;
+}
+
+.weatherImage {
+  width: 70px;
+}
+
+.avgWeather {
+  margin-top: 8px;
+  @include temperature(5px, 4px, darkblue);
+}

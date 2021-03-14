@@ -1,0 +1,59 @@
+<div class="cardDetail">
+  <div class="circle"></div>
+  <div class="backButton"  [routerLink]="['/weather']">
+    <img src="assets/image/back-button.png" alt="backButton">
+    <p>BACK</p>
+  </div>
+  <div class="container">
+    <div class="weatherInfo" *ngIf="weatherDetail">
+      <div class="mainDetail">
+        <div class="temperature">
+          <div class="temp">
+            <p class="averageTemp">
+              {{ weatherDetail.list[0]?.main.temp | convertTemperature | number: "1.0-0" }}
+            </p>
+            <p class="weather">{{ weatherDetail.list[0]?.weather[0]?.main }}</p>
+          </div>
+          <div class="wind">
+            <div>
+              <p>humidity</p>
+              <p>{{ weatherDetail.list[0]?.main.humidity }} %</p>
+            </div>
+            <div class="windSpeed">
+              <p>wind</p>
+              <p>{{weatherDetail.list[0]?.wind.speed }} KM</p>
+            </div>
+          </div>
+        </div>
+        <div class="cityName">
+          <p>{{ weatherDetail.city.name | uppercase }}</p>
+          <hr />
+        </div>
+      </div>
+      <div class="moreDetail">
+        <div class="twitter">
+          TWITTER PART
+        </div>
+        <div class="weatherList">
+          <div
+            class="weatherCard"
+            *ngFor="let weather of lastDay"
+          >
+            <p>{{ weather.dt_txt | date: "E" }}</p>
+            <img
+              [src]="weather.url"
+              [alt]="weather.weather"
+              class="weatherImage"
+            />
+            <p class="avgWeather">
+              {{ weather.main.temp | convertTemperature | number: "1.0-0" }}
+            </p>
+            <p>
+              {{ weather.weather[0]?.main }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

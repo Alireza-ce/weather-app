@@ -1,0 +1,51 @@
+@import 'mixin/flex';
+@import 'mixin/card';
+@import 'mixin/font';
+@import 'variables/border';
+
+.card {
+  @include verticalCenter;
+  @include card;
+  @include regularFont;
+  box-shadow: $cardBoxShadow;
+  &__averageTemp {
+   @include temperature;
+   font-size: 24px;
+   margin-top: 16px;
+   margin-bottom: 4px;
+  }
+
+  &__weatherInfo{
+      font-size: 12px;
+  }
+  &__minMaxTemp {
+    display: flex;
+    width: 100%;
+    @include regularFont;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 16px;
+
+  }
+
+  &__image {
+    width: 150px;
+  }
+}
+
+.minTitle{
+    color: #3ce6ae;
+}
+
+.maxTitle{
+    color: #e63c3c;
+}
+
+.minTitle , .maxTitle{
+  font-size: 12px;
+  margin: 0;
+}
+
+.minMaxTitle{
+  margin: 0;
+}

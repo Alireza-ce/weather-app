@@ -1,0 +1,85 @@
+@import "mixin/font";
+@import "mixin/flex";
+@import "mixin/main";
+@import 'variables/border';
+
+.addCard {
+  background-color: #fcfcfc;
+  min-height: 100vh;
+  padding-top: 64px;
+
+  &__form {
+    width: 100%;
+    @include verticalCenter;
+    h1 {
+      @include titleFont;
+    }
+    form {
+      position: relative;
+      width: 40%;
+      margin-top: 16px;
+    }
+    input {
+      border: none;
+      width: 100%;
+      border-radius: $inputBorderRadius;
+      box-shadow: 0 0 25px 2px rgba(150, 150, 255, 0.3);
+      padding: 8px 32px 8px 16px;
+      position: relative;
+      @include regularFont;
+    }
+
+    button {
+      background: #31feae;
+      position: absolute;
+      cursor: pointer;
+      top: -4px;
+      right: -15px;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 0 25px 2px rgba(150, 150, 255, 0.3);
+      transition: all 0.2s ease-in;
+      mat-icon {
+        color: white;
+        transform: scale(1.5);
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.container {
+  @include container;
+}
+
+.addCity {
+  display: flex;
+  margin-top: 32px;
+  justify-content: center;
+}
+
+.addCityButton {
+  margin-top: 12px;
+  border-radius: 25px;
+  font-size: 12px;
+  background-color: #2b244d;
+}
+
+.loading {
+  margin-top: 32px;
+}
+
+.addCityButton {
+  transition: all 0.2s ease-in;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.isCityExist {
+  color: rebeccapurple;
+  margin-top: 24px;
+}
