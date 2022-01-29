@@ -1,11 +1,11 @@
 # weather app
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+
+
 ## Demo
 
 https://weather-app-clone.netlify.app
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
 
 ![](weather-app.gif)
